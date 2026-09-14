@@ -3,6 +3,8 @@ import java.time.LocalDate;
 class main {
 
     void main() {
+
+        Library library = new Library();
         Book book1 = new Book("Allan B. Downey",
                 "Think Java",
                 "9781492072508",
@@ -20,13 +22,27 @@ class main {
 
         Member member1 = new Member("Thorkild Hansen", 111);
         Member member2 = new Member("Lise Andersen", 222);
+        Member member3 = new Member("Anders Pedersen",333);
 
         Loan loan1 = new Loan(book1, member1, LocalDate.of(2026, 9, 13));
 
-        IO.println(loan1);
+        Loan loan2 = new Loan(book2, member2, LocalDate.of(2026, 9, 14));
 
+        //IO.println(loan1);
+        //IO.println("\n"+loan2);
 
+        library.addMember(member1);
+        library.addMember(member2);
+        library.addMember(member3);
 
+        library.addBook(book1);
+        library.addBook(book2);
+        library.addBook(book3);
+        IO.println("\n-----Bøger-----");
+        library.printBooks();
+        IO.println("");
+        IO.println("-----Medlemmer-----");
+        library.printMembers();
 
 
     }
