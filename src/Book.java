@@ -31,6 +31,9 @@ class Book {
     public String toString() {
         return String.format("%s: %s; ISBN: %s; (%d)", author, title, isbn, id);
     }
+    public int getBookId(){
+        return id;
+    }
 
 
 }

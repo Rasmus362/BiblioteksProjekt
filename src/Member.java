@@ -12,6 +12,9 @@ public class Member {
         return String.format("%s (Lånersnummer: %d)", fuldeNavn, medlemsNummer);
 
     }
+    public int getMemberId(){
+        return medlemsNummer;
+    }
 
 
 

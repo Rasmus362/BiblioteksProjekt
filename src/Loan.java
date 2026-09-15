@@ -6,7 +6,7 @@ public class Loan {
     final Member member;
     final LocalDate borrowedDate;
 
-    Loan(Book book, Member member, LocalDate borrowedDate){
+    Loan(Book book, Member member, LocalDate borrowedDate) {
 
         this.book = book;
         this.member = member;
@@ -17,24 +17,28 @@ public class Loan {
         // Loan har et "member"
 
     }
-    public Book getBook(){
+
+    public Book getBook() {
         return book;
     }
-    public Member getMember(){
+
+    public Member getMember() {
         return member;
     }
 
     public LocalDate getDueDate() {
-        return borrowedDate.plusDays (14);
+        return borrowedDate.plusDays(14);
     }
-    public boolean isOverDue(){
-        if (LocalDate.now().isAfter(getDueDate())){
+
+    public boolean isOverDue() {
+        if (LocalDate.now().isAfter(getDueDate())) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
-    public String toString(){
+
+    public String toString() {
         return String.format("\n%s\n%s\nAfleveringsfrist: %s", book, member, getDueDate());
     }
 }

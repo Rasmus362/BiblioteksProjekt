@@ -19,6 +19,7 @@ public class Library {
         return books;
     }
 
+
     public ArrayList<Member> getMembers() {
         return members;
     }
@@ -39,4 +40,47 @@ public class Library {
             IO.println(member);
         }
     }
+
+    public Book getBook(int bookId) {
+//Gennemgå books → kig på én book ad gangen → sammenlign dens ID med bookId → hvis de matcher, returnér bogen → hvis ingen matcher, returnér null.
+        for (Book book : books) {
+            if (book.getBookId() == bookId) {
+                return book;
+            }
+        }
+
+        return null;
+    }
+
+    public Member getMember(int memberId) {
+        for (Member member : members) {
+            if (member.getMemberId() == memberId) {
+                return member;
+            }
+        }
+        return null;
+    }
+
+    public boolean loanBook(int bookId, int memberId) {
+        Book foundBook = getBook(bookId);
+        Member foundMember = getMember(memberId);
+        if (foundBook != null && foundMember != null) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    public boolean returnBook(int bookId) {
+        for (Loan loan : loans) {
+            if (loan.getBook().getBookId() == bookId) {
+                loans.remove(loan);
+                return true;
+            }
+
+        }
+    return false;
+    }
+
 }

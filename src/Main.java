@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 class main {
 
@@ -24,13 +25,6 @@ class main {
         Member member2 = new Member("Lise Andersen", 222);
         Member member3 = new Member("Anders Pedersen",333);
 
-        Loan loan1 = new Loan(book1, member1, LocalDate.of(2026, 9, 13));
-
-        Loan loan2 = new Loan(book2, member2, LocalDate.of(2026, 9, 14));
-
-        //IO.println(loan1);
-        //IO.println("\n"+loan2);
-
         library.addMember(member1);
         library.addMember(member2);
         library.addMember(member3);
@@ -38,6 +32,30 @@ class main {
         library.addBook(book1);
         library.addBook(book2);
         library.addBook(book3);
+
+        IO.println("\n");
+        Book foundBook = library.getBook(1);
+        IO.println(book1);
+        Book notFoundBook = library.getBook(111);
+        IO.println(notFoundBook);
+
+        IO.println("\n");
+        Member memberFound = library.getMember(111);
+        IO.println(member1);
+        Member memberNotFound = library.getMember(111);
+        IO.println(memberNotFound);
+
+        library.loanBook(1,111);
+        ArrayList<Loan> loans = library.getLoans();
+        IO.println(loans);
+
+
+        IO.println(library.loanBook(1, 111));
+        IO.println(library.loanBook(3, 32));
+        IO.println(library.loanBook(5, 3));
+
+
+
         IO.println("\n-----Bøger-----");
         library.printBooks();
         IO.println("");
