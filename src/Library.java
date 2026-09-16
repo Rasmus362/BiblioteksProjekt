@@ -66,6 +66,11 @@ public class Library {
         Book foundBook = getBook(bookId);
         Member foundMember = getMember(memberId);
         if (foundBook != null && foundMember != null) {
+            for (Loan loan : loans) {
+                if (loan.getBook().getBookId() == bookId) {
+                    return false;
+                }
+            }
             Loan loan = new Loan(foundBook, foundMember, LocalDate.now());
             loans.add(loan);
             return true;
@@ -76,22 +81,25 @@ public class Library {
     }
 
     public boolean returnBook(int bookId) {
-        for (Loan loan : loans) {
+        for (int i = 0; i < loans.size(); i++) {
+            Loan loan = loans.get(i);
+
             if (loan.getBook().getBookId() == bookId) {
-                loans.remove(loan);
+                loans.remove(i);
                 return true;
             }
-
         }
-    return false;
+
+        return false;
     }
-    ArrayList<Loan> findLoansByMemberId(int memberId){
+
+    ArrayList<Loan> findLoansByMemberId(int memberId) {
         ArrayList<Loan> memberLoans = new ArrayList<>();
         for (Loan loan : loans) {
-            if (loan.getMember().getMemberId() == memberId){
+            if (loan.getMember().getMemberId() == memberId) {
                 memberLoans.add(loan);
             }
-            //if (loan.getBook().getBookId()  == bookId){
+
         }
         return memberLoans;
 

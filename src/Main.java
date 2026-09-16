@@ -34,12 +34,16 @@ class main {
 
         IO.println("Skibidi");
 
+        //library.loanBook(1, 111);
+        //library.loanBook(1, 222);
+
         library.loanBook(1, 111);
-        library.loanBook(1, 222);
 
         IO.println(library.getLoans());
 
+        IO.println(library.returnBook(1));
 
+        IO.println(library.getLoans());
 
         IO.println("\n-----Bøger-----");
         library.printBooks();
