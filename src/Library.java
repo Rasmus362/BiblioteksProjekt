@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.time.LocalDate;
 
 public class Library {
 
@@ -65,6 +66,8 @@ public class Library {
         Book foundBook = getBook(bookId);
         Member foundMember = getMember(memberId);
         if (foundBook != null && foundMember != null) {
+            Loan loan = new Loan(foundBook, foundMember, LocalDate.now());
+            loans.add(loan);
             return true;
         } else {
             return false;
@@ -81,6 +84,17 @@ public class Library {
 
         }
     return false;
+    }
+    ArrayList<Loan> findLoansByMemberId(int memberId){
+        ArrayList<Loan> memberLoans = new ArrayList<>();
+        for (Loan loan : loans) {
+            if (loan.getMember().getMemberId() == memberId){
+                memberLoans.add(loan);
+            }
+            //if (loan.getBook().getBookId()  == bookId){
+        }
+        return memberLoans;
+
     }
 
 }

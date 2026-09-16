@@ -1,4 +1,3 @@
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 class main {
@@ -33,26 +32,12 @@ class main {
         library.addBook(book2);
         library.addBook(book3);
 
-        IO.println("\n");
-        Book foundBook = library.getBook(1);
-        IO.println(book1);
-        Book notFoundBook = library.getBook(111);
-        IO.println(notFoundBook);
+        IO.println("Skibidi");
 
-        IO.println("\n");
-        Member memberFound = library.getMember(111);
-        IO.println(member1);
-        Member memberNotFound = library.getMember(111);
-        IO.println(memberNotFound);
+        library.loanBook(1, 111);
+        library.loanBook(1, 222);
 
-        library.loanBook(1,111);
-        ArrayList<Loan> loans = library.getLoans();
-        IO.println(loans);
-
-
-        IO.println(library.loanBook(1, 111));
-        IO.println(library.loanBook(3, 32));
-        IO.println(library.loanBook(5, 3));
+        IO.println(library.getLoans());
 
 
 
