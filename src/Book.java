@@ -13,6 +13,8 @@
 class Book {
     // final = uforanderlige værdier (immutable)
 
+    //book# object bliver behandlet i bookklassens konstruktør.
+
     final String author;
     final String title;
     final String isbn;

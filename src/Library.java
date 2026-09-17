@@ -3,6 +3,9 @@ import java.time.LocalDate;
 
 public class Library {
 
+    //Library holder styr på samlingen af  bøger medlemmer og lån, herudover indeholder Libraryklassen også metoderne
+    //til at finde en bog, registrere et lån og aflevere en bog tilbage gennem ConsoleUI.
+
     //"Opret en privat variabel ved navn books, som er en liste af Book-objekter, og giv den en ny tom ArrayList."
     private ArrayList<Book> books = new ArrayList<>();
     private ArrayList<Member> members = new ArrayList<>();

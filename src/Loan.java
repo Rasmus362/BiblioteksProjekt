@@ -2,6 +2,9 @@ import java.time.LocalDate;
 
 public class Loan {
 
+    //Loan klassen repræsentere selve lånet, hvilken bog, hvilken medlem, lånedato og afleveringsfrist.
+    //At der eksisterer et aktivt lån for bogen kan så bruges til at afgøre om den er udlånt.
+
     final Book book;
     final Member member;
     final LocalDate borrowedDate;

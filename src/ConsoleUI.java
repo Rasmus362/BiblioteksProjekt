@@ -2,6 +2,8 @@ import java.util.ArrayList;
 
 public class ConsoleUI {
 
+    //ConsoleUI, står for brugergrænseoverfladen, viser menuen og modtager input og sender brugerens ønsker videre.
+
     private Library library;
 
     public ConsoleUI(Library library) {
@@ -43,7 +45,7 @@ public class ConsoleUI {
         if (lånLykkedes) {
             IO.println("Lån registreret");
         }else {
-            IO.println("Der er sket en fejl.");
+            IO.println("Bogen er desværre udlånt.");
         }
     }
     public void returnBook(){
@@ -52,7 +54,7 @@ public class ConsoleUI {
         if (afleveringLykkedes) {
             IO.println("Aflevering registreret");
         }else {
-            IO.println("Der er sket en fejl.");
+            IO.println("Bogen er desværre udlånt.");
         }
     }
     public void showLoans(){
