@@ -54,7 +54,7 @@ public class ConsoleUI {
         if (afleveringLykkedes) {
             IO.println("Aflevering registreret");
         }else {
-            IO.println("Bogen er desværre udlånt.");
+            IO.println("Der er sket en fejl.");
         }
     }
     public void showLoans(){
