@@ -1,10 +1,10 @@
-import java.util.ArrayList;
-
 class main {
 
-    void main() {
-
+    public static void main (String[] args){
         Library library = new Library();
+        ConsoleUI consoleUI = new ConsoleUI(library);
+
+
         Book book1 = new Book("Allan B. Downey",
                 "Think Java",
                 "9781492072508",
@@ -32,26 +32,7 @@ class main {
         library.addBook(book2);
         library.addBook(book3);
 
-        IO.println("Skibidi");
-
-        //library.loanBook(1, 111);
-        //library.loanBook(1, 222);
-
-        library.loanBook(1, 111);
-
-        IO.println(library.getLoans());
-
-        IO.println(library.returnBook(1));
-
-        IO.println(library.getLoans());
-
-        IO.println("\n-----Bøger-----");
-        library.printBooks();
-        IO.println("");
-        IO.println("-----Medlemmer-----");
-        library.printMembers();
-
-
+        consoleUI.run();
     }
 
 }

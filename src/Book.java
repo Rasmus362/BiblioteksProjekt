@@ -26,6 +26,14 @@ class Book {
         this.id = id;
 
     }
+    @Override
+    public boolean equals(Object otherObj){
+        if(otherObj == null || getClass() != otherObj.getClass()){
+            return false;
+        }
+        Book book = (Book) otherObj;
+        return id == book.id;
+    }
 
 
     public String toString() {
